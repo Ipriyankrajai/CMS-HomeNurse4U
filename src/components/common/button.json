@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_common_buttons",
+  "info": {
+    "displayName": "button"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "link": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "filled",
+        "outlined"
+      ]
+    }
+  }
+}
