@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_common_location_items",
+  "info": {
+    "displayName": "locationItem"
+  },
+  "options": {},
+  "attributes": {
+    "mapImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "infoImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "displayImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "shortLocation": {
+      "type": "string"
+    }
+  }
+}

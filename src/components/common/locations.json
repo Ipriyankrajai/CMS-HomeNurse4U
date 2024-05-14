@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_common_locations",
+  "info": {
+    "displayName": "locations"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "displayName": "locationItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "common.location-item"
+    }
+  }
+}

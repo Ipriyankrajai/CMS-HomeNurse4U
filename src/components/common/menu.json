@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_common_menus",
+  "info": {
+    "displayName": "menu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.button",
+      "required": true,
+      "min": 1
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
