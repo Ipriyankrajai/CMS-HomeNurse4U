@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "why_home_nurse4_yous",
+  "info": {
+    "singularName": "why-home-nurse4-you",
+    "pluralName": "why-home-nurse4-yous",
+    "displayName": "Why HomeNurse4You",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

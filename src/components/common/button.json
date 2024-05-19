@@ -1,7 +1,8 @@
 {
   "collectionName": "components_common_buttons",
   "info": {
-    "displayName": "button"
+    "displayName": "button",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,6 +21,9 @@
         "filled",
         "outlined"
       ]
+    },
+    "subLabel": {
+      "type": "string"
     }
   }
 }

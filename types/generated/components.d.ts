@@ -4,6 +4,7 @@ export interface CommonButton extends Schema.Component {
   collectionName: 'components_common_buttons';
   info: {
     displayName: 'button';
+    description: '';
   };
   attributes: {
     label: Attribute.String &
@@ -13,6 +14,19 @@ export interface CommonButton extends Schema.Component {
       }>;
     link: Attribute.String;
     type: Attribute.Enumeration<['text', 'filled', 'outlined']>;
+    subLabel: Attribute.String;
+  };
+}
+
+export interface CommonInfo extends Schema.Component {
+  collectionName: 'components_common_infos';
+  info: {
+    displayName: 'info';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -20,6 +34,7 @@ export interface CommonLocationItem extends Schema.Component {
   collectionName: 'components_common_location_items';
   info: {
     displayName: 'locationItem';
+    description: '';
   };
   attributes: {
     mapImage: Attribute.Media & Attribute.Required;
@@ -28,6 +43,7 @@ export interface CommonLocationItem extends Schema.Component {
     name: Attribute.String & Attribute.Required;
     address: Attribute.String & Attribute.Required;
     shortLocation: Attribute.String;
+    default_show: Attribute.Boolean;
   };
 }
 
@@ -60,13 +76,29 @@ export interface CommonMenu extends Schema.Component {
   };
 }
 
+export interface HomeBanner extends Schema.Component {
+  collectionName: 'components_home_banners';
+  info: {
+    displayName: 'banner';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    countries: Attribute.Media & Attribute.Required;
+    backgroundMedia: Attribute.Media & Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'common.button': CommonButton;
+      'common.info': CommonInfo;
       'common.location-item': CommonLocationItem;
       'common.locations': CommonLocations;
       'common.menu': CommonMenu;
+      'home.banner': HomeBanner;
     }
   }
 }

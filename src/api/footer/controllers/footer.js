@@ -19,6 +19,27 @@ module.exports = {
                 item: true
               },
             },
+            contact: {
+              populate: {
+                icon: true
+              }
+            },
+            email: {
+              populate: {
+                icon: true
+              }
+            },
+            locations:{
+              populate: {
+                item: {
+                  populate: {
+                    mapImage: true,
+                    infoImage: true,
+                    displayImage: true
+                  }
+                }
+              }
+            }
           },
         });
   

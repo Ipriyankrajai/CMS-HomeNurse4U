@@ -34,6 +34,18 @@
       "type": "component",
       "repeatable": false,
       "component": "common.locations"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.info",
+      "required": true
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.info",
+      "required": true
     }
   }
 }
