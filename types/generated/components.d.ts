@@ -15,6 +15,7 @@ export interface CommonButton extends Schema.Component {
     link: Attribute.String;
     type: Attribute.Enumeration<['text', 'filled', 'outlined']>;
     subLabel: Attribute.String;
+    icon: Attribute.Media;
   };
 }
 
@@ -76,6 +77,17 @@ export interface CommonMenu extends Schema.Component {
   };
 }
 
+export interface CommonPoints extends Schema.Component {
+  collectionName: 'components_common_points';
+  info: {
+    displayName: 'points';
+  };
+  attributes: {
+    name: Attribute.String;
+    color: Attribute.String;
+  };
+}
+
 export interface HomeBanner extends Schema.Component {
   collectionName: 'components_home_banners';
   info: {
@@ -90,6 +102,32 @@ export interface HomeBanner extends Schema.Component {
   };
 }
 
+export interface VisitLeftBanner extends Schema.Component {
+  collectionName: 'components_visit_left_banners';
+  info: {
+    displayName: 'leftBanner';
+  };
+  attributes: {
+    label: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.String;
+  };
+}
+
+export interface VisitRightBanner extends Schema.Component {
+  collectionName: 'components_visit_right_banners';
+  info: {
+    displayName: 'rightBanner';
+  };
+  attributes: {
+    videoURL: Attribute.String;
+    title: Attribute.Blocks;
+    description: Attribute.String;
+    playIcon: Attribute.Media;
+    pauseIcon: Attribute.Media;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -98,7 +136,10 @@ declare module '@strapi/types' {
       'common.location-item': CommonLocationItem;
       'common.locations': CommonLocations;
       'common.menu': CommonMenu;
+      'common.points': CommonPoints;
       'home.banner': HomeBanner;
+      'visit.left-banner': VisitLeftBanner;
+      'visit.right-banner': VisitRightBanner;
     }
   }
 }

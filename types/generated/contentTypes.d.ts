@@ -929,6 +929,43 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiFeatureFeature extends Schema.SingleType {
+  collectionName: 'features';
+  info: {
+    singularName: 'feature';
+    pluralName: 'features';
+    displayName: 'feature';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.Text;
+    features: Attribute.Component<'common.menu'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feature.feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feature.feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -993,6 +1030,112 @@ export interface ApiHomeHome extends Schema.SingleType {
   };
 }
 
+export interface ApiMapBannerMapBanner extends Schema.SingleType {
+  collectionName: 'map_banners';
+  info: {
+    singularName: 'map-banner';
+    pluralName: 'map-banners';
+    displayName: 'mapBanner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.Text;
+    points: Attribute.Component<'common.points', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::map-banner.map-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::map-banner.map-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiVisitBannerVisitBanner extends Schema.SingleType {
+  collectionName: 'visit_banners';
+  info: {
+    singularName: 'visit-banner';
+    pluralName: 'visit-banners';
+    displayName: 'visitBanner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    leftBanner: Attribute.Component<'visit.left-banner'>;
+    rightBanner: Attribute.Component<'visit.right-banner'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::visit-banner.visit-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::visit-banner.visit-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiWhitePapperWhitePapper extends Schema.SingleType {
+  collectionName: 'white_pappers';
+  info: {
+    singularName: 'white-papper';
+    pluralName: 'white-pappers';
+    displayName: 'whitePapper';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::white-papper.white-papper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::white-papper.white-papper',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiWhyHomeNurse4YouWhyHomeNurse4You extends Schema.SingleType {
   collectionName: 'why_home_nurse4_yous';
   info: {
@@ -1050,8 +1193,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::feature.feature': ApiFeatureFeature;
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
+      'api::map-banner.map-banner': ApiMapBannerMapBanner;
+      'api::visit-banner.visit-banner': ApiVisitBannerVisitBanner;
+      'api::white-papper.white-papper': ApiWhitePapperWhitePapper;
       'api::why-home-nurse4-you.why-home-nurse4-you': ApiWhyHomeNurse4YouWhyHomeNurse4You;
     }
   }

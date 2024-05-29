@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_visit_left_banners",
+  "info": {
+    "displayName": "leftBanner"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

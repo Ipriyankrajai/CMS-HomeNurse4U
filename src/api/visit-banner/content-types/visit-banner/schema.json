@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "visit_banners",
+  "info": {
+    "singularName": "visit-banner",
+    "pluralName": "visit-banners",
+    "displayName": "visitBanner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "leftBanner": {
+      "displayName": "leftBanner",
+      "type": "component",
+      "repeatable": false,
+      "component": "visit.left-banner"
+    },
+    "rightBanner": {
+      "displayName": "rightBanner",
+      "type": "component",
+      "repeatable": false,
+      "component": "visit.right-banner"
+    }
+  }
+}

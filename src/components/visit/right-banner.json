@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_visit_right_banners",
+  "info": {
+    "displayName": "rightBanner"
+  },
+  "options": {},
+  "attributes": {
+    "videoURL": {
+      "type": "string"
+    },
+    "title": {
+      "type": "blocks"
+    },
+    "description": {
+      "type": "string"
+    },
+    "playIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "pauseIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
