@@ -102,6 +102,20 @@ export interface HomeBanner extends Schema.Component {
   };
 }
 
+export interface SupportSupportMenu extends Schema.Component {
+  collectionName: 'components_support_support_menus';
+  info: {
+    displayName: 'supportMenu';
+  };
+  attributes: {
+    image: Attribute.Media;
+    label: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.String;
+    button: Attribute.Component<'common.button'>;
+  };
+}
+
 export interface VisitLeftBanner extends Schema.Component {
   collectionName: 'components_visit_left_banners';
   info: {
@@ -138,6 +152,7 @@ declare module '@strapi/types' {
       'common.menu': CommonMenu;
       'common.points': CommonPoints;
       'home.banner': HomeBanner;
+      'support.support-menu': SupportSupportMenu;
       'visit.left-banner': VisitLeftBanner;
       'visit.right-banner': VisitRightBanner;
     }

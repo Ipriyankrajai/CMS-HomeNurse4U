@@ -1066,6 +1066,40 @@ export interface ApiMapBannerMapBanner extends Schema.SingleType {
   };
 }
 
+export interface ApiSupportSupport extends Schema.SingleType {
+  collectionName: 'supports';
+  info: {
+    singularName: 'support';
+    pluralName: 'supports';
+    displayName: 'support';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    supportMenu: Attribute.Component<'support.support-menu', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support.support',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
 export interface ApiVisitBannerVisitBanner extends Schema.SingleType {
   collectionName: 'visit_banners';
   info: {
@@ -1197,6 +1231,7 @@ declare module '@strapi/types' {
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
       'api::map-banner.map-banner': ApiMapBannerMapBanner;
+      'api::support.support': ApiSupportSupport;
       'api::visit-banner.visit-banner': ApiVisitBannerVisitBanner;
       'api::white-papper.white-papper': ApiWhitePapperWhitePapper;
       'api::why-home-nurse4-you.why-home-nurse4-you': ApiWhyHomeNurse4YouWhyHomeNurse4You;
